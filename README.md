@@ -16,4 +16,5 @@
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/a01565a5-98cc-45e7-a006-e645a371f550)
 ## Нажимаем Send Message
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/6a9a8a6f-ee6d-41e8-b4e8-1b843f42e4e1)
+## Получаем сообщение от бота
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/e6325997-5c9e-4197-ac5b-d05f760e6a59)
