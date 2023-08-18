@@ -12,6 +12,12 @@
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/ef07ee6e-ba1b-4e76-8093-518f94ed75c4)
 
 
+### Запросы
+https://ilimnury.pythonanywhere.com/api/users/register/
+https://ilimnury.pythonanywhere.com/api/users/token/
+https://ilimnury.pythonanywhere.com/api/telegram/generateTgToken/
+https://ilimnury.pythonanywhere.com/api/telegram/sendMessage/
+
 
 # Добавил Front-end на React 
 ## можете протестить здесь https://factorytt.vercel.app/
