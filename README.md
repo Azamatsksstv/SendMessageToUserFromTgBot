@@ -1,5 +1,5 @@
 # Тестовое задание TgBot 
-## Добавил Front-end на React можете посмотреть здесь https://factorytt.vercel.app/
+## Добавил Front-end на React можете протестить здесь https://factorytt.vercel.app/
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/b02b7672-683d-46f6-999d-2371a4bcffa1)
 ## Переходим по ссылке и запускаем тг бот
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/0934f4c3-f14e-499c-aede-9405bd84abfc)
