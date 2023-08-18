@@ -13,7 +13,7 @@
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/fa6f4642-598d-47b4-a01d-d73e85287343)
 ## Вставляем в чате и отправляем токен
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/7dfefc75-3b6c-4d48-80f6-31664e00d281)
-## Нажимаем Send Message
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/a01565a5-98cc-45e7-a006-e645a371f550)
+## Нажимаем Send Message
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/6a9a8a6f-ee6d-41e8-b4e8-1b843f42e4e1)
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/e6325997-5c9e-4197-ac5b-d05f760e6a59)
