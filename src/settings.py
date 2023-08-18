@@ -18,9 +18,6 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'users.CustomUser'
 
 
-TELEGRAM_BOT_TOKEN = "6620893650:AAGgx_QzkcgZ4pz_UZUZCpZs4NtB-PGNifQ"
-
-
 # Application definition
 
 INSTALLED_APPS = [

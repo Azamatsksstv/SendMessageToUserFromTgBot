@@ -12,7 +12,7 @@ import string
 from .serializers import TelegramTokenSerializer
 
 
-class GenerateTelegramTokenView(APIView):
+class GenerateTelegramTokenView(APIView):  # Логика для генерирования токена для привязывания к чату user-а
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
@@ -23,9 +23,9 @@ class GenerateTelegramTokenView(APIView):
         return Response({'token': token.key}, status=status.HTTP_201_CREATED)
 
 
-class SetChatIdToUserView(APIView):
+class BindChatIdToUserView(APIView):  # Логика для привязывания chat_id к user-у
     def post(self, request, *args, **kwargs):
-        print("yehu")
+        # print("yehu")
         serializer = TelegramTokenSerializer(data=request.data)
         if serializer.is_valid():
             chat_id = serializer.validated_data['chat_id']
@@ -37,16 +37,14 @@ class SetChatIdToUserView(APIView):
                 user.save()
             except CustomUser.DoesNotExist:
                 print("Пользователь с таким токеном не найден.")
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
             return Response({'detail': 'Chat ID saved successfully.'}, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-
-class SendTelegramMessageView(APIView):
+class SendTelegramMessageView(APIView):  # Логика для отправки сообщения пользователю через бот
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
@@ -60,7 +58,9 @@ class SendTelegramMessageView(APIView):
             if chat_id:
                 bot_token = '6620893650:AAGgx_QzkcgZ4pz_UZUZCpZs4NtB-PGNifQ'
                 bot = Bot(token=bot_token)
-                bot.send_message(chat_id=chat_id, text=text)
+
+                message = f"{user.name}, я получил от тебя сообщение:\n{text}"
+                bot.send_message(chat_id=chat_id, text=message)
 
                 return Response({'detail': 'Telegram message sent successfully.'}, status=status.HTTP_201_CREATED)
             else:

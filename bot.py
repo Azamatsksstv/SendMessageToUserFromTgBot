@@ -7,19 +7,15 @@ TELEGRAM_BOT_TOKEN = "6620893650:AAGgx_QzkcgZ4pz_UZUZCpZs4NtB-PGNifQ"
 bot_token = TELEGRAM_BOT_TOKEN
 bot = Bot(token=bot_token)
 
-ENTER_BOT_TOKEN = range(1)
-
 
 def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Пожалуйста, введите ваш tgBotToken:")
-    return ENTER_BOT_TOKEN
+    update.message.reply_text("Привет! Пожалуйста, введите ваш токен:")
 
 
 def enter_bot_token(update: Update, context: CallbackContext):
     user_input = update.message.text
-    context.user_data['token'] = user_input
     chat_id = update.message.chat_id
-    api_url = "http://127.0.0.1:8000/api/telegram/setTgBotTokenToUser/"
+    api_url = "http://127.0.0.1:8000/api/telegram/bindChatToUser/"
     data = {
         'token': user_input,
         'chat_id': chat_id
@@ -27,9 +23,9 @@ def enter_bot_token(update: Update, context: CallbackContext):
     response = requests.post(api_url, json=data)
 
     if response.status_code == 200:
-        update.message.reply_text("tgBotToken успешно сохранен.")
+        update.message.reply_text("Токен успешно сохранен.")
     else:
-        update.message.reply_text("Ошибка при сохранении tgBotToken.")
+        update.message.reply_text("Пользователь с таким токеном не существует!")
 
     return ConversationHandler.END
 
@@ -38,15 +34,8 @@ def main():
     updater = Updater(token=bot_token, use_context=True)
     dp = updater.dispatcher
 
-    conversation_handler = ConversationHandler(
-        entry_points=[CommandHandler('start', start)],
-        states={
-            ENTER_BOT_TOKEN: [MessageHandler(Filters.text & ~Filters.command, enter_bot_token)]
-        },
-        fallbacks=[],
-    )
-
-    dp.add_handler(conversation_handler)
+    dp.add_handler(CommandHandler('start', start))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, enter_bot_token))
 
     updater.start_polling()
     updater.idle()
