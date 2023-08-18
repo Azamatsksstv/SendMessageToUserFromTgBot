@@ -6,7 +6,8 @@
 
 ## Регистрация
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/823a138c-376c-4e59-9989-4630d61551d9)
-## Получаем access токен для авторизации ### (использовал simplejwt)
+## Получаем access токен для авторизации 
+### (использовал simplejwt)
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/6dbae88d-2b0a-4c29-96b2-9cefc78ceb1e)
 ## Указываем в хедерах токен для авторизации, получаем token для тг бота, отправляем его в чат
 ![image](https://github.com/Azamatsksstv/SendMessageToUserFromTgBot/assets/90980633/3ed9aa50-0f2e-43bc-9a12-82ab25604736)
